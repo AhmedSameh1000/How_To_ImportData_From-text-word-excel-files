@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "caIj4X56eiTg+2kEL5a3/Wxkx2bfaAg6vPqO9u9lzcw=",
+  "Source": "Data",
+  "BasePath": "_content/Data",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Data\\wwwroot",
+      "Source": "Data",
+      "ContentRoot": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\",
+      "BasePath": "_content/Data",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\uploads\\53e26114-7c71-4307-a98b-d2248b1c1b55.xlsx",
+      "SourceId": "Data",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\",
+      "BasePath": "_content/Data",
+      "RelativePath": "uploads/53e26114-7c71-4307-a98b-d2248b1c1b55.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\53e26114-7c71-4307-a98b-d2248b1c1b55.xlsx"
+    },
+    {
+      "Identity": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\uploads\\82c6ab03-cbd0-4d72-8ce0-faccda8b7552.txt",
+      "SourceId": "Data",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\",
+      "BasePath": "_content/Data",
+      "RelativePath": "uploads/82c6ab03-cbd0-4d72-8ce0-faccda8b7552.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\82c6ab03-cbd0-4d72-8ce0-faccda8b7552.txt"
+    }
+  ]
+}
