@@ -77,6 +77,53 @@ namespace Data.Controllers
             }
         }
 
+        [HttpPost("ReadExcelFileWithOutSave")]
+        public IActionResult ReadExcelFileWithOutSave([FromForm] IFormFile file)
+        {
+            try
+            {
+                System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+                if (file == null || file.Length == 0)
+                    return BadRequest("File is empty");
+
+                // Create a stream from the uploaded file
+                using (var stream = file.OpenReadStream())
+                {
+                    // Create an ExcelDataReader object to read from the stream
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        // Read each row in the Excel file
+                        var isHeaderSkipped = false;
+                        do
+                        {
+                            while (reader.Read())
+                            {
+                                if (!isHeaderSkipped)
+                                {
+                                    isHeaderSkipped = true;
+                                    continue;
+                                }
+                                // Example: Read data from Excel and process it
+                                var student = new Student();
+                                student.Name = reader.GetValue(1).ToString(); // Assuming name is in the second column
+                                student.age = Convert.ToInt32(reader.GetValue(2).ToString()); // Assuming age is in the third column
+
+                                // Process the student object as needed, such as saving to a database
+                                _ApplicationDbContext.Add(student);
+                                _ApplicationDbContext.SaveChanges();
+                            }
+                        } while (reader.NextResult()); // Move to next result set if any (for multiple sheets in Excel)
+                    }
+                }
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("ReadText")]
         public IActionResult ReadText([FromForm] IFormFile file)
         {
@@ -94,9 +141,33 @@ namespace Data.Controllers
                 {
                     return BadRequest();
                 }
+
                 var Reader = System.IO.File.ReadAllText(Path.Combine(FolderUploads, filePath));
 
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("ReadTextWithOutSave")]
+        public IActionResult ReadTextWithOutSave([FromForm] IFormFile file)
+        {
+            try
+            {
+                //System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+                if (file == null || file.Length == 0)
+                    return BadRequest();
+
+                using (var reader = new StreamReader(file.OpenReadStream()))
+                {
+                    var fileContent = reader.ReadToEnd();
+                    // Do whatever processing you need with the fileContent here
+                    // For example, you can return the file content in the response
+                    return Ok(fileContent);
+                }
             }
             catch (Exception ex)
             {
@@ -128,6 +199,32 @@ namespace Data.Controllers
                     string text = doc.Text;
                     // Now you have the text content of the Word file in the 'text' variable
                     return Ok(text);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("ReadWordWithOutSave")]
+        public IActionResult ReadWordWithOutSave([FromForm] IFormFile file)
+        {
+            try
+            {
+                //System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+                if (file == null || file.Length == 0)
+                    return BadRequest();
+
+                using (var stream = file.OpenReadStream())
+                {
+                    // Use DocX to read the content of the Word file directly from the stream
+                    using (DocX doc = DocX.Load(stream))
+                    {
+                        string text = doc.Text;
+                        // Now you have the text content of the Word file in the 'text' variable
+                        return Ok(text);
+                    }
                 }
             }
             catch (Exception ex)

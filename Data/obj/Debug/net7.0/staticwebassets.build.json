@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "caIj4X56eiTg+2kEL5a3/Wxkx2bfaAg6vPqO9u9lzcw=",
+  "Hash": "zxjWuupLueQelZimKn6V5v0s1rEb6A9IBU0Iro/4gCQ=",
   "Source": "Data",
   "BasePath": "_content/Data",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\uploads\\37b2dc0b-9019-4890-afba-4dce68d582ec.docx",
+      "SourceId": "Data",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\",
+      "BasePath": "_content/Data",
+      "RelativePath": "uploads/37b2dc0b-9019-4890-afba-4dce68d582ec.docx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\37b2dc0b-9019-4890-afba-4dce68d582ec.docx"
+    },
     {
       "Identity": "C:\\Users\\Ahmed Sameh\\Desktop\\DealWithData\\Data\\Data\\wwwroot\\uploads\\53e26114-7c71-4307-a98b-d2248b1c1b55.xlsx",
       "SourceId": "Data",
